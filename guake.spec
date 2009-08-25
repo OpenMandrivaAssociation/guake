@@ -1,10 +1,10 @@
 Summary:	A drop-down terminal for Gnome Desktop Environment
 Name:     	guake
-Version:	0.3.1
-Release:	%mkrel 2
+Version:	0.4.0
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
-Source0: 	http://guake-terminal.org/releases/%version/%name-%version.tar.gz
+Source0: 	http://trac.guake-terminal.org/files/%{name}-%{version}.tar.gz
 URL:		http://guake-terminal.org
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Requires:	pygtk2.0 python-vte
@@ -41,6 +41,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/gconf/schemas/*.schemas
 %{_libdir}/%name
 %{_bindir}/%name
+%{_bindir}/%name-prefs
 %{_datadir}/%name
 %{_datadir}/applications/*.desktop
 %{_mandir}/man1/*
