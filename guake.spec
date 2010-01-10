@@ -7,7 +7,7 @@ Group:		Graphical desktop/GNOME
 Source0: 	http://trac.guake-terminal.org/files/%{name}-%{version}.tar.gz
 URL:		http://guake-terminal.org
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
-Requires:	pygtk2.0 python-vte
+Requires:	pygtk2.0 python-vte python-dbus
 BuildRequires:	gtk+2-devel libGConf2-devel
 BuildRequires:	pygtk2.0-devel python-vte
 BuildRequires:	intltool
