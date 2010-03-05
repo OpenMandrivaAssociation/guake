@@ -1,11 +1,11 @@
 Summary:	A drop-down terminal for Gnome Desktop Environment
 Name:     	guake
-Version:	0.4.0
+Version:	0.4.1
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
-Source0: 	http://trac.guake-terminal.org/files/%{name}-%{version}.tar.gz
-URL:		http://guake-terminal.org
+Source0: 	http://guake.org/files/%{name}-%{version}.tar.gz
+URL:		http://guake.org
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Requires:	pygtk2.0 python-vte python-dbus
 BuildRequires:	gtk+2-devel libGConf2-devel
