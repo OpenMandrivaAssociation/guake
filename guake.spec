@@ -39,6 +39,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-, root, root)
 %{_sysconfdir}/gconf/schemas/*.schemas
+%{_sysconfdir}/xdg/autostart/guake.desktop
 %{_libdir}/%name
 %{_bindir}/%name
 %{_bindir}/%name-prefs
