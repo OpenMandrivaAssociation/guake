@@ -1,7 +1,7 @@
 Summary:	A drop-down terminal for Gnome Desktop Environment
 Name:     	guake
 Version:	0.4.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Source0: 	http://guake.org/files/%{name}-%{version}.tar.gz
