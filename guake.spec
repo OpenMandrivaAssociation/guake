@@ -1,16 +1,20 @@
 Summary:	A drop-down terminal for Gnome Desktop Environment
 Name:     	guake
 Version:	0.4.2
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Source0: 	http://guake.org/files/%{name}-%{version}.tar.gz
 Patch0:		0001-Retrieve-port-as-int.patch
 URL:		http://guake.org
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
-Requires:	pygtk2.0 python-vte python-dbus
-BuildRequires:	gtk+2-devel libGConf2-devel
-BuildRequires:	pygtk2.0-devel python-vte
+Requires:	pygtk2.0
+Requires:	python-vte
+Requires:	python-dbus
+Requires:	python-notify
+BuildRequires:	gtk+2-devel
+BuildRequires:	libGConf2-devel
+BuildRequires:	pygtk2.0-devel
+BuildRequires:	python-vte
 BuildRequires:	intltool
 
 %description
