@@ -13,6 +13,7 @@ Requires:	python-dbus
 Requires:	python-notify
 BuildRequires:	gtk+2-devel
 BuildRequires:	libGConf2-devel
+BuildRequires:	GConf2
 BuildRequires:	pygtk2.0-devel
 BuildRequires:	python-vte
 BuildRequires:	intltool
