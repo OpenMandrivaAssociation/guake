@@ -43,7 +43,6 @@ rm -f %{buildroot}%{_libdir}/%{name}/globalhotkeys.la
 %preun_uninstall_gconf_schemas %{name}
 
 %files -f %{name}.lang
-%defattr(-, root, root)
 %{_sysconfdir}/gconf/schemas/%{name}.schemas
 %{_sysconfdir}/xdg/autostart/%{name}.desktop
 %{_libdir}/%{name}
@@ -53,7 +52,8 @@ rm -f %{buildroot}%{_libdir}/%{name}/globalhotkeys.la
 %{_mandir}/man1/*
 %{_datadir}/dbus-1/services/org.guake.Guake.service
 %{_datadir}/pixmaps/%{name}
-
+%{_iconsdir}/*/apps/*png
+%{_py_puresitedir}/%{name}
 
 %changelog
 * Fri May 06 2011 Jani Välimaa <wally@mandriva.org> 0.4.2-3mdv2011.0
