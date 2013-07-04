@@ -52,6 +52,7 @@ rm -f %{buildroot}%{_libdir}/%{name}/globalhotkeys.la
 %{_datadir}/pixmaps/%{name}
 %{_iconsdir}/hicolor/*/apps/*png
 %{py_puresitedir}/%{name}
+%{py_platsitedir}/%{name}
 
 %changelog
 * Fri May 06 2011 Jani Välimaa <wally@mandriva.org> 0.4.2-3mdv2011.0
