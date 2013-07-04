@@ -32,12 +32,9 @@ need to press a key to invoke him, and press again to hide.
 %make
 
 %install
-%makeinstall_std
+%makeinstall_std pythondir=%{py_platsitedir}
 
 %{find_lang} %{name}
-
-# we don't want this
-rm -f %{buildroot}%{_libdir}/%{name}/globalhotkeys.la
 
 %preun
 %preun_uninstall_gconf_schemas %{name}
@@ -51,7 +48,6 @@ rm -f %{buildroot}%{_libdir}/%{name}/globalhotkeys.la
 %{_datadir}/dbus-1/services/org.guake.Guake.service
 %{_datadir}/pixmaps/%{name}
 %{_iconsdir}/hicolor/*/apps/*png
-%{py_puresitedir}/%{name}
 %{py_platsitedir}/%{name}
 
 %changelog
