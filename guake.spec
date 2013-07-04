@@ -1,17 +1,16 @@
 Summary:	A drop-down terminal for Gnome Desktop Environment
 Name:     	guake
-Version:	0.4.2
-Release:	%mkrel 3
+Version:	0.4.4
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Source0: 	http://guake.org/files/%{name}-%{version}.tar.gz
-Patch0:		0001-Retrieve-port-as-int.patch
-patch1:		guake-0.4.2.glibh.patch
 URL:		http://guake.org
 Requires:	pygtk2.0
 Requires:	python-vte
 Requires:	python-dbus
 Requires:	python-notify
+Requires:	gnome-python-gconf
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(gconf-2.0)
 BuildRequires:	GConf2
@@ -25,8 +24,6 @@ need to press a key to invoke him, and press again to hide.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1 -b .glibh
 
 %build
 %configure2_5x \
