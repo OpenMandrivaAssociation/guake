@@ -44,16 +44,14 @@ rm -f %{buildroot}%{_libdir}/%{name}/globalhotkeys.la
 
 %files -f %{name}.lang
 %{_sysconfdir}/gconf/schemas/%{name}.schemas
-%{_sysconfdir}/xdg/autostart/%{name}.desktop
-%{_libdir}/%{name}
 %{_bindir}/%{name}*
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}*.desktop
 %{_mandir}/man1/*
 %{_datadir}/dbus-1/services/org.guake.Guake.service
 %{_datadir}/pixmaps/%{name}
-%{_iconsdir}/*/apps/*png
-%{_py_puresitedir}/%{name}
+%{_iconsdir}/hicolor/*/apps/*png
+%{py_puresitedir}/%{name}
 
 %changelog
 * Fri May 06 2011 Jani Välimaa <wally@mandriva.org> 0.4.2-3mdv2011.0
