@@ -34,7 +34,7 @@ need to press a key to invoke him, and press again to hide.
 %make_build
 
 %install
-%make_install
+PBR_VERSION=%{version} %make_install PREFIX=%{_prefix} COMPILE_SCHEMA=0
 
 %{find_lang} %{name}
 
