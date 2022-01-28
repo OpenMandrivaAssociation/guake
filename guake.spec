@@ -1,3 +1,5 @@
+%define _empty_manifest_terminate_build 0
+
 Summary:	A drop-down terminal for Gnome Desktop Environment
 Name:     	guake
 Version:	3.8.1
