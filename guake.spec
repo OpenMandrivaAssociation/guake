@@ -39,15 +39,14 @@ PBR_VERSION=%{version} %make_install PREFIX=%{_prefix} COMPILE_SCHEMA=0
 %{find_lang} %{name}
 
 %files -f %{name}.lang
-%{_sysconfdir}/gconf/schemas/%{name}.schemas
+%{python_sitelib}/%{name}
+%{python_sitelib}/*egg-info
 %{_bindir}/%{name}*
-%{_datadir}/%{name}
+%{_datadir}/%{name}/
 %{_datadir}/applications/%{name}*.desktop
-%{_mandir}/man1/*
-%{_datadir}/dbus-1/services/org.guake.Guake.service
-%{_datadir}/pixmaps/%{name}
-%{_iconsdir}/hicolor/*/apps/*png
-%{py_platsitedir}/%{name}
+%{_datadir}/glib-2.0/schemas/org.guake.gschema.xml
+%{_datadir}/pixmaps/guake.png
+%{_metainfodir}/guake.desktop.metainfo.xml
 
 %changelog
 * Fri May 06 2011 Jani Välimaa <wally@mandriva.org> 0.4.2-3mdv2011.0
