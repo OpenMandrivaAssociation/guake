@@ -1,43 +1,42 @@
 Summary:	A drop-down terminal for Gnome Desktop Environment
 Name:     	guake
-Version:	0.4.4
-Release:	2
+Version:	3.8.1
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
-Source0: 	http://guake.org/files/%{name}-%{version}.tar.gz
+Source0: 	https://github.com/Guake/guake/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
 URL:		http://guake.org
-Requires:	pygtk2.0
-Requires:	python-vte
-Requires:	python-dbus
-Requires:	python-notify
-Requires:	gnome-python-gconf
-BuildRequires:	pkgconfig(gtk+-2.0)
-BuildRequires:	pkgconfig(gconf-2.0)
-BuildRequires:	GConf2
-BuildRequires:	pygtk2.0-devel
-BuildRequires:	python-vte
-BuildRequires:	intltool
+
+BuildRequires:	git
+BuildRequires:	python3dist(pip)
+BuildRequires:	python3dist(pbr)
+BuildRequires:	python3dist(setuptools)
+BuildRequires:	pkgconfig(glib-2.0)
+
+Requires: vte
+Requires: typelib(Keybinder)
+Requires: typelib(Notify)
+Requires: typelib(Vte)
+Requires: typelib(Pango)
+Requires: python3dist(pycairo)
+Requires: python3dist(pygobject)
+Requires: python3dist(dbus-python)
+Requires: libnotify
 
 %description
 Guake is a drop-down terminal for Gnome Desktop Environment, so you just
 need to press a key to invoke him, and press again to hide.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-%configure2_5x \
-	--disable-schemas-install \
-	--disable-static
-%make
+%make_build
 
 %install
-%makeinstall_std pythondir=%{py_platsitedir}
+%make_install
 
 %{find_lang} %{name}
-
-%preun
-%preun_uninstall_gconf_schemas %{name}
 
 %files -f %{name}.lang
 %{_sysconfdir}/gconf/schemas/%{name}.schemas
