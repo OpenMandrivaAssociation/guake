@@ -2,7 +2,7 @@
 
 Summary:	A drop-down terminal for Gnome Desktop Environment
 Name:     	guake
-Version:	3.8.1
+Version:	3.8.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
@@ -15,7 +15,7 @@ BuildRequires:	python3dist(pbr)
 BuildRequires:	python3dist(setuptools)
 BuildRequires:	pkgconfig(glib-2.0)
 
-Requires: vte
+Requires: vte3
 Requires: typelib(Keybinder)
 Requires: typelib(Notify)
 Requires: typelib(Vte)
