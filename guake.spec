@@ -14,6 +14,7 @@ BuildRequires:	python3dist(pip)
 BuildRequires:	python3dist(pbr)
 BuildRequires:	python3dist(setuptools)
 BuildRequires:  python3dist(setuptools-scm)
+BuildRequires:  pkgconfig(proj)
 BuildRequires:	pkgconfig(glib-2.0)
 
 Requires: vte3
