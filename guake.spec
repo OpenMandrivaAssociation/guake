@@ -13,6 +13,7 @@ BuildRequires:	git
 BuildRequires:	python3dist(pip)
 BuildRequires:	python3dist(pbr)
 BuildRequires:	python3dist(setuptools)
+BuildRequires:  python3dist(setuptools-scm)
 BuildRequires:	pkgconfig(glib-2.0)
 
 Requires: vte3
