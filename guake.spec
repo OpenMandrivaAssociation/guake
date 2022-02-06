@@ -2,7 +2,7 @@
 
 Summary:	A drop-down terminal for Gnome Desktop Environment
 Name:     	guake
-Version:	3.8.2
+Version:	3.8.4
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
