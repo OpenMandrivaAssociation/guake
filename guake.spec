@@ -8,7 +8,6 @@ License:	GPLv2+
 Group:		Graphical desktop/GNOME
 URL:		http://guake.org
 Source0: 	https://github.com/Guake/guake/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
-Patch0: https://patch-diff.githubusercontent.com/raw/Guake/guake/pull/2038.patch
 
 BuildRequires:	git
 BuildRequires:	python3dist(pip)
