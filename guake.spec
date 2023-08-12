@@ -36,11 +36,11 @@ need to press a key to invoke him, and press again to hide.
 %autosetup -p1
 
 %build
-%make_build
+%py_build
 
 %install
 #PBR_VERSION=%{version} 
-%make_install PREFIX=%{_prefix} COMPILE_SCHEMA=0
+%py_install
 
 %{find_lang} %{name}
 
