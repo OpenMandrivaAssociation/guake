@@ -50,11 +50,11 @@ need to press a key to invoke him, and press again to hide.
 #{python_sitelib}/%{name}
 #{python_sitelib}/*egg-info
 #{_bindir}/%{name}*
-%{_datadir}/%{name}/
-%{_datadir}/applications/%{name}*.desktop
-%{_datadir}/glib-2.0/schemas/org.guake.gschema.xml
-%{_datadir}/pixmaps/guake.png
-%{_metainfodir}/guake.desktop.metainfo.xml
+#{_datadir}/%{name}/
+#{_datadir}/applications/%{name}*.desktop
+#{_datadir}/glib-2.0/schemas/org.guake.gschema.xml
+#{_datadir}/pixmaps/guake.png
+#{_metainfodir}/guake.desktop.metainfo.xml
 
 %changelog
 * Fri May 06 2011 Jani Välimaa <wally@mandriva.org> 0.4.2-3mdv2011.0
