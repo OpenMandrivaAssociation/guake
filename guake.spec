@@ -6,7 +6,9 @@ Version:	3.10
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
-Source0: 	https://github.com/Guake/guake/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
+# GitHub source no longer compile (as of guake 3.9+), use recommended PyPi source.
+#Source0: 	https://github.com/Guake/guake/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
+Source0:   https://files.pythonhosted.org/packages/source/g/guake/guake-%{version}.tar.gz
 URL:		http://guake.org
 
 BuildRequires:	git
