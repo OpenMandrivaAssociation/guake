@@ -42,9 +42,10 @@ need to press a key to invoke him, and press again to hide.
 #PBR_VERSION=%{version} 
 %py_install
 
-%find_lang %{name} %{?no_lang_C}
+#find_lang %{name} %{?no_lang_C}
 
-%files -f %{name}.lang
+%files 
+#-f %{name}.lang
 #{python_sitelib}/%{name}
 #{python_sitelib}/*egg-info
 #{_bindir}/%{name}*
