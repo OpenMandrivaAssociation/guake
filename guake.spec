@@ -11,6 +11,7 @@ URL:		http://guake.org
 
 BuildRequires:	git
 BuildRequires:	python3dist(pip)
+BuildRequires:  python3dist(wheel)
 BuildRequires:	python3dist(pbr)
 BuildRequires:	python3dist(setuptools)
 BuildRequires:	pkgconfig(glib-2.0)
@@ -36,7 +37,8 @@ need to press a key to invoke him, and press again to hide.
 %make_build
 
 %install
-PBR_VERSION=%{version} %make_install PREFIX=%{_prefix} COMPILE_SCHEMA=0
+#PBR_VERSION=%{version} 
+%make_install PREFIX=%{_prefix} COMPILE_SCHEMA=0
 
 %{find_lang} %{name}
 
