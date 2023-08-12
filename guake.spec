@@ -43,9 +43,9 @@ need to press a key to invoke him, and press again to hide.
 %{find_lang} %{name}
 
 %files -f %{name}.lang
-%{python_sitelib}/%{name}
-%{python_sitelib}/*egg-info
-%{_bindir}/%{name}*
+#{python_sitelib}/%{name}
+#{python_sitelib}/*egg-info
+#{_bindir}/%{name}*
 %{_datadir}/%{name}/
 %{_datadir}/applications/%{name}*.desktop
 %{_datadir}/glib-2.0/schemas/org.guake.gschema.xml
