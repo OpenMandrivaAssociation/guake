@@ -9,6 +9,7 @@ Group:		Graphical desktop/GNOME
 # GitHub source no longer compile (as of guake 3.9+), use recommended PyPi source.
 #Source0: 	https://github.com/Guake/guake/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
 Source0:   https://files.pythonhosted.org/packages/source/g/guake/guake-%{version}.tar.gz
+Source1:        https://raw.githubusercontent.com/Guake/guake/%{version}/guake/paths.py.in
 URL:		http://guake.org
 Patch0:  guake-Makefile-generate-install-paths.patch
 
@@ -35,6 +36,7 @@ need to press a key to invoke him, and press again to hide.
 
 %prep
 %autosetup -p1
+cp %{SOURCE1} guake/
 
 %build
 %make_build PREFIX=%{_prefix} generate-desktop generate-mo generate-paths
