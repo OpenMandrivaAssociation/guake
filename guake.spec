@@ -6,23 +6,36 @@ Version:	3.10
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
-Source0: 	https://github.com/Guake/guake/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
+# GitHub source no longer compile (as of guake 3.9+), use recommended PyPi source.
+#Source0: 	https://github.com/Guake/guake/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
+Source0:   https://files.pythonhosted.org/packages/source/g/guake/guake-%{version}.tar.gz
+Source1:        https://raw.githubusercontent.com/Guake/guake/%{version}/guake/paths.py.in
 URL:		http://guake.org
+Patch0:  guake-Makefile-generate-install-paths.patch
 
 BuildRequires:	git
 BuildRequires:	python3dist(pip)
+BuildRequires:  python3dist(wheel)
 BuildRequires:	python3dist(pbr)
 BuildRequires:	python3dist(setuptools)
 BuildRequires:	pkgconfig(glib-2.0)
 
 Requires: vte3
 Requires: typelib(Keybinder)
+Requires: %{_lib}keybinder-gir3.0
 Requires: typelib(Notify)
+Requires: %{_lib}notify-gir0.7
 Requires: typelib(Vte)
+Requires: %{_lib}vte-gir2.91
 Requires: typelib(Pango)
+Requires: %{_lib}pango-gir1.0
+Requires: typelib(Wnck)
+Requires: %{_lib}wnck-gir3.0
+Requires: %{_lib}utempter0
 Requires: python3dist(pycairo)
 Requires: python3dist(pygobject)
 Requires: python3dist(dbus-python)
+Requires: python3dist(pip)
 Requires: libnotify
 
 %description
@@ -31,24 +44,27 @@ need to press a key to invoke him, and press again to hide.
 
 %prep
 %autosetup -p1
+cp %{SOURCE1} guake/
 
 %build
-%make_build
+%make_build PREFIX=%{_prefix} generate-desktop generate-mo generate-paths
+%py_build
 
 %install
-PBR_VERSION=%{version} %make_install PREFIX=%{_prefix} COMPILE_SCHEMA=0
+%py_install
+%make_build DESTDIR=%{buildroot} PREFIX=%{_prefix} install-locale install-schemas
 
-%{find_lang} %{name}
+%find_lang %{name}
 
 %files -f %{name}.lang
-%{python_sitelib}/%{name}
-%{python_sitelib}/*egg-info
+%{python_sitelib}/%{name}-*.dist-info/
+%{python_sitelib}/guake/
 %{_bindir}/%{name}*
-%{_datadir}/%{name}/
+%{_datadir}/guake/
 %{_datadir}/applications/%{name}*.desktop
 %{_datadir}/glib-2.0/schemas/org.guake.gschema.xml
 %{_datadir}/pixmaps/guake.png
-%{_metainfodir}/guake.desktop.metainfo.xml
+%{_datadir}/metainfo/guake.desktop.metainfo.xml
 
 %changelog
 * Fri May 06 2011 Jani Välimaa <wally@mandriva.org> 0.4.2-3mdv2011.0
