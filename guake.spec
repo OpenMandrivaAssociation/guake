@@ -22,12 +22,20 @@ BuildRequires:	pkgconfig(glib-2.0)
 
 Requires: vte3
 Requires: typelib(Keybinder)
+Requires: %{_lib}keybinder-gir3.0
 Requires: typelib(Notify)
+Requires: %{_lib}notify-gir0.7
 Requires: typelib(Vte)
+Requires: %{_lib}vte-gir2.91
 Requires: typelib(Pango)
+Requires: %{_lib}pango-gir1.0
+Requires: typelib(Wnck)
+Requires: %{_lib}wnck-gir3.0
+Requires: %{_lib}utempter0
 Requires: python3dist(pycairo)
 Requires: python3dist(pygobject)
 Requires: python3dist(dbus-python)
+Requires: python3dist(pip)
 Requires: libnotify
 
 %description
@@ -43,7 +51,6 @@ cp %{SOURCE1} guake/
 %py_build
 
 %install
-#PBR_VERSION=%{version} 
 %py_install
 %make_build DESTDIR=%{buildroot} PREFIX=%{_prefix} install-locale install-schemas
 
