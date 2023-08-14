@@ -37,11 +37,13 @@ need to press a key to invoke him, and press again to hide.
 %autosetup -p1
 
 %build
+%make_build PREFIX=%{_prefix} generate-desktop generate-mo generate-paths
 %py_build
 
 %install
 #PBR_VERSION=%{version} 
 %py_install
+%make_build DESTDIR=%{buildroot} PREFIX=%{_prefix} install-locale install-schemas
 
 #find_lang %{name} %{?no_lang_C}
 
