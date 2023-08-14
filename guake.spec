@@ -47,18 +47,17 @@ cp %{SOURCE1} guake/
 %py_install
 %make_build DESTDIR=%{buildroot} PREFIX=%{_prefix} install-locale install-schemas
 
-#find_lang %{name} %{?no_lang_C}
+%find_lang %{name}
 
-%files 
-#-f %{name}.lang
+%files -f %{name}.lang
 %{python_sitelib}/%{name}-*.dist-info/
 %{python_sitelib}/guake/
 %{_bindir}/%{name}*
-#{_datadir}/%{name}/
-#{_datadir}/applications/%{name}*.desktop
-#{_datadir}/glib-2.0/schemas/org.guake.gschema.xml
-#{_datadir}/pixmaps/guake.png
-#{_metainfodir}/guake.desktop.metainfo.xml
+%{_datadir}/guake/
+%{_datadir}/applications/%{name}*.desktop
+%{_datadir}/glib-2.0/schemas/org.guake.gschema.xml
+%{_datadir}/pixmaps/guake.png
+%{_datadir}/metainfo/guake.desktop.metainfo.xml
 
 %changelog
 * Fri May 06 2011 Jani Välimaa <wally@mandriva.org> 0.4.2-3mdv2011.0
