@@ -10,7 +10,7 @@ Group:		Graphical desktop/GNOME
 #Source0: 	https://github.com/Guake/guake/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
 Source0:   https://files.pythonhosted.org/packages/source/g/guake/guake-%{version}.tar.gz
 Source1:        https://raw.githubusercontent.com/Guake/guake/%{version}/guake/paths.py.in
-URL:		http://guake.org
+URL:		https://guake.org
 Patch0:  guake-Makefile-generate-install-paths.patch
 
 BuildRequires:	git
