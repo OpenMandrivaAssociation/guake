@@ -14,10 +14,11 @@ URL:		https://guake.org
 Patch0:  guake-Makefile-generate-install-paths.patch
 
 BuildRequires:	git
-BuildRequires:	python3dist(pip)
-BuildRequires:  python3dist(wheel)
-BuildRequires:	python3dist(pbr)
-BuildRequires:	python3dist(setuptools)
+BuildRequires:  make
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:  python%{pyver}dist(wheel)
+BuildRequires:	python%{pyver}dist(pbr)
+BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	pkgconfig(glib-2.0)
 
 Requires: vte3
@@ -32,10 +33,10 @@ Requires: %{_lib}pango-gir1.0
 Requires: typelib(Wnck)
 Requires: %{_lib}wnck-gir3.0
 Requires: %{_lib}utempter0
-Requires: python3dist(pycairo)
-Requires: python3dist(pygobject)
-Requires: python3dist(dbus-python)
-Requires: python3dist(pip)
+Requires: python%{pyver}dist(pycairo)
+Requires: python%{pyver}dist(pygobject)
+Requires: python%{pyver}dist(dbus-python)
+Requires: python%{pyver}dist(pip)
 Requires: libnotify
 
 %description
