@@ -15,6 +15,7 @@ Patch0:  guake-Makefile-generate-install-paths.patch
 
 BuildRequires:	git
 BuildRequires:  make
+BuildRequires:  gettext
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:  python%{pyver}dist(wheel)
 BuildRequires:	python%{pyver}dist(pbr)
