@@ -3,7 +3,7 @@
 Summary:	A drop-down terminal for Gnome Desktop Environment
 Name:     	guake
 Version:	3.10
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 # GitHub source no longer compile (as of guake 3.9+), use recommended PyPi source.
@@ -21,6 +21,7 @@ BuildRequires:  python%{pyver}dist(wheel)
 BuildRequires:	python%{pyver}dist(pbr)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(python3)
 
 Requires: vte3
 Requires: typelib(Keybinder)
